@@ -1,0 +1,83 @@
+package applications;
+import java.util.*;
+public class ATM {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Welcome to xxx ATM!!!");
+		
+		 int bal=10000; int amount=0,amount1;
+		while(true) {
+			System.out.println("Please enter 1 --> Check for balance");
+			System.out.println("Please enter 2 --> Deposit");
+			System.out.println("Please enter 3 --> Withdraw");
+			System.out.println("Please enter 4 --> Exit");
+			int choice=sc.nextInt();
+			switch(choice) {
+			case 1: 
+					System.out.println("Please insert the card");
+					System.out.println("Enter your ATM PIN number");
+					sc.nextLine();
+				//sc.nextLine();
+					String pin=sc.next();
+					if(pin.equals("1234")) {
+						System.out.println("Balance: "+bal);
+					}
+					else {
+						 System.out.println("Please enter the valid pin number");
+					}
+					break;
+			case 2:
+				System.out.println("Please insert the card");
+				System.out.println("Enter your ATM PIN number");
+				sc.nextLine();
+				
+				String pin1=sc.next();
+				if(pin1.equals("1234")) {
+				System.out.println("Enter the amount to be deposited");
+				sc.nextLine();
+				amount=sc.nextInt();
+				
+				bal+=amount;
+				System.out.println("Deposit successful!");
+				System.out.println("Your current balance: "+bal);
+			}
+				else {
+					 System.out.println("Please enter the valid pin number");
+				}
+				break;
+			
+			case 3:
+				System.out.println("Please insert the card");
+				System.out.println("Enter your ATM PIN number");
+				sc.nextLine();
+				
+				String pin2=sc.next();
+				if(pin2.equals("1234")) {
+				System.out.println("Enter the amount for the withdrawal");
+				sc.nextLine();
+				 amount1=sc.nextInt();
+				if(bal>=amount1) {
+					bal-=amount1;
+					System.out.println("Withdraw successful!");
+					System.out.println("Your current balance: "+bal);
+				}
+				else {
+					 System.out.println("You dont have that much amount");
+				}
+				}
+				else {
+					 System.out.println("Please enter the valid pin number");
+				}
+				break;
+				
+				case 4: System.out.println("Thank you!");
+						System.exit(0);
+			
+			
+			
+
+		}
+	}
+}
+}
